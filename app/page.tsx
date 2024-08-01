@@ -1,4 +1,5 @@
 import PatientForm from "@/components/forms/PatientForm";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,10 +10,10 @@ export default function Home() {
         <div className="sub-container max-w-[496px]">
           <Image
             src="/assets/icons/hospital.png"
-            height={1000}
-            width={1000}
+            height={2000}
+            width={2000}
             alt="patient"
-            className="mb-12 h-10 w-fit"
+            className="mb-12 h-20 w-fit"
           />
           <PatientForm />
           <div className="text-14-regular mt-20 flex justify-between">
@@ -27,7 +28,7 @@ export default function Home() {
       </section>
       <div className="w-1/2">
         <Image
-          src="/assets/images/group.jpg"
+          src="/assets/images/group.webp"
           width={1000}
           height={1000}
           alt="doctor's group image"

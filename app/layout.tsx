@@ -22,10 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "main-h-screen bg-dark-300 font-sans antialiased"
+          "main-h-screen bg-slate-700 font-sans antialiased"
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light">
           {children}
         </ThemeProvider>
       </body>
