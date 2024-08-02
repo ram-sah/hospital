@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React from 'react'
 import {
     FormControl,
@@ -8,11 +8,19 @@ import {
     FormLabel,
     FormMessage,
   } from "@/components/ui/form";
+
   import { Input } from "@/components/ui/input";
-const CustomFormField = () => {
+import { FormFieldType } from './forms/PatientForm';
+
+  interface CustomProps {
+    control: Control<any>,
+    fieldType: FormFieldType
+  }
+
+    const CustomFormField = ({ control, fieldType }: CustomProps) => {
   return (
     <FormField
-    control={form.control}
+    control={control}
     name="username"
     render={({ field }) => (
       <FormItem>
@@ -25,7 +33,7 @@ const CustomFormField = () => {
         </FormDescription>
         <FormMessage />
       </FormItem>
-  )
+   )
 }
 
 export default CustomFormField

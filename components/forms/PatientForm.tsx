@@ -1,20 +1,15 @@
 "use client";
-
+import CustomFormField from "../CustomFormField";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Form } from "@/components/ui/form";
+
+export enum FormFieldType {
+  INPUT = 'input'
+}
 const formSchema = z.object({
   username: z.string().min(3, {
     message: "Username must be at least 3 characters.",
@@ -29,7 +24,6 @@ const PatientForm = () => {
     },
   });
 
-
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
   }
@@ -37,25 +31,15 @@ const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <section className="mb-12 space-y-4">
-    <h1 className="header">Hi there 👋 </h1>
-    <p className="text-dark-700">Schedule your appointment</p>
+          <h1 className="header">Hi there 👋 </h1>
+          <p className="text-dark-700">Schedule your appointment</p>
         </section>
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} className="dark"/>
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
+
+        <CustomFormField
+        fieldType={FormFieldType.INPUT}
+        control={form.control}
         />
+
         <Button type="submit">Submit</Button>
       </form>
     </Form>
