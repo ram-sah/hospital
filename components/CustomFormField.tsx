@@ -27,7 +27,7 @@ const CustomFormField = ({ control, fieldType }: CustomProps) => {
         <FormItem>
           <FormLabel>Username</FormLabel>
           <FormControl>
-            <Input placeholder="shadcn" {...field} className="dark" />
+            <Input placeholder="shadcn" {...field} className="bg-slate-700" />
           </FormControl>
           <FormDescription>This is your public display name.</FormDescription>
           <FormMessage />
