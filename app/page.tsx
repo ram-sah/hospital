@@ -26,13 +26,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="w-1/2">
+      <div className="max-w-[50%]">
         <Image
           src="/assets/images/group.webp"
           width={1000}
           height={1000}
           alt="doctor's group image"
-          className="object-cover h-full w-full"
+          className="side-img "
         />
       </div>
     </div>
