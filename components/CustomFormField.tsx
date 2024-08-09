@@ -29,7 +29,7 @@ interface CustomProps {
 }
 
 const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
-  return <Input type="text" placeholder="Ram " />;
+  return <Input type="text" placeholder="Ram " className="bg-dark-300"/>;
 };
 
 const CustomFormField = (props: CustomProps) => {
